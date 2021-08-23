@@ -1,0 +1,21 @@
+@charset "UTF-8";
+body.demo {
+  font-family: Arial, PMingLiU, 新細明體;
+  padding: 8px;
+}
+body.demo pre,
+body.demo code {
+  font-family: MingLiU, 細明體;
+}
+body.demo a {
+  text-decoration-line: none;
+}
+body.demo a:hover {
+  color: chocolate;
+}
+body.demo .fade-enter-active, body.demo .fade-leave-active {
+  transition: opacity 0.25s ease;
+}
+body.demo .fade-enter-from, body.demo .fade-leave-to {
+  opacity: 0;
+}

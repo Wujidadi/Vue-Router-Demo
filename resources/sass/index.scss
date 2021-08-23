@@ -1,0 +1,38 @@
+body {
+    &.demo {
+        font-family: Arial, PMingLiU, 新細明體;
+        padding: 8px;
+
+        pre,
+        code {
+            font-family: MingLiU, 細明體;
+        }
+
+        a {
+            text-decoration: {
+                line: none;
+            }
+
+            &:hover {
+                color: chocolate;
+            }
+        }
+
+        .fade {
+
+            &-enter-active,
+            &-leave-active {
+                transition: opacity 0.25s ease;
+            }
+
+            &-enter-from,
+            &-leave-to {
+                opacity: 0;
+            }
+        }
+
+        .vue-demo {
+            
+        }
+    }
+}

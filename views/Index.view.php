@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Router Demo</title>
+    <link rel="stylesheet" href="/libraries/Bootstrap/bootstrap.min.css">
+    <script src="/libraries/Bootstrap/bootstrap.min.js"></script>
+    <script src="/libraries/Vue/vue.global.prod.js"></script>
+    <script src="/libraries/Vue/vue-router.global.prod.js"></script>
+    <link rel="stylesheet" href="<?php echo AssetCachebuster('/css/index.css', CachebusterLength); ?>">
+</head>
+<body class="demo">
+    <main>
+        <div id="vueApp">
+            <h1>Vue Router Demo</h1>
+
+            <!-- router-link：渲染後轉為 a，to 屬性指定目標 URL -->
+            <router-link class="mr-1" to="/">首頁</router-link>
+            <router-link class="mx-2" to="/about">關於</router-link>
+
+            <!-- router-view：渲染 Vue route -->
+            <router-view v-slot="{ Component }">
+                <transition name="fade" mode="out-in">
+                    <component :is="Component" />
+                </transition>
+            </router-view>
+        </div>
+    </main>
+
+    <script type="module" src="<?php echo AssetCachebuster('/js/index.js', CachebusterLength); ?>"></script>
+</body>
+</html>

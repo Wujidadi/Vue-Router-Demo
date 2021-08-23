@@ -1,0 +1,107 @@
+#!/usr/bin/env php
+<?php
+
+chdir(__DIR__);
+
+/*
+|--------------------------------------------------------------------------
+| Canta
+|--------------------------------------------------------------------------
+|
+| Command entry point of the command line tools of the framework.
+|
+*/
+
+$option = getopt('', ['help']);
+
+if ($argc <= 1)
+{
+    showHelp();
+}
+else
+{
+    if (isset($option['help']))
+    {
+        showHelp();
+    }
+
+    switch (strtolower($argv[1]))
+    {
+        case 'test':
+            echo "\033[32mTest\033[0m\n";
+            break;
+
+        case 'migrate':
+        case 'migration':
+            echo `php tools/migrate.php`;
+            break;
+
+        case 'sass2css':
+        case 'scss2css':
+        case 'sasstocss':
+        case 'scsstocss':
+        case 'sass':
+        case 'scss':
+        case 'css':
+            if (in_array('-c', $argv))
+            {
+                echo `php tools/sass2css.php -c`;
+            }
+            else
+            {
+                echo `php tools/sass2css.php`;
+            }
+            break;
+
+        case 'js':
+        case 'javascript':
+            if (in_array('-c', $argv))
+            {
+                echo `php tools/jsMinObf.php -c`;
+            }
+            else
+            {
+                echo `php tools/jsMinObf.php`;
+            }
+            break;
+
+        default:
+            showHelp();
+            break;
+    }
+}
+
+exit(0);
+
+
+/*
+| Helper functions
+*/
+
+/**
+ * Show usage help.
+ *
+ * @return void
+ */
+function showHelp()
+{
+    $myName = basename(__FILE__);
+    echo "Usage:\n";
+    echo sprintf("    %s \033[32m{tool name}\033[0m\n", $myName);
+    echo PHP_EOL;
+    echo "    Tool names:\n";
+    echo PHP_EOL;
+    echo sprintf("     * %s\n", 'Database migrating:');
+    echo sprintf("       \033[33m%s\033[0m\n", 'migrate');
+    echo sprintf("       \033[33m%s\033[0m\n", 'migration');
+    echo PHP_EOL;
+    echo sprintf("     * %s\n", 'Convert SASS/SCSS to CSS:');
+    echo sprintf("       \033[33m%s\033[0m\n", 'sass2css');
+    echo sprintf("       \033[33m%s\033[0m\n", 'scss2css');
+    echo sprintf("       \033[33m%s\033[0m\n", 'sasstocss');
+    echo sprintf("       \033[33m%s\033[0m\n", 'scsstocss');
+    echo sprintf("       \033[33m%s\033[0m\n", 'sass');
+    echo sprintf("       \033[33m%s\033[0m\n", 'scss');
+    echo sprintf("       \033[33m%s\033[0m\n", 'css');
+    exit(0);
+}
