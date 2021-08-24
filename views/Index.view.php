@@ -18,7 +18,14 @@
 
             <div id="vue-render-area" v-cloak>
                 <!-- router-link：渲染後轉為 a，to 屬性指定目標 URL -->
-                <router-link class="mr-1" to="/">首頁</router-link>
+                <router-link class="me-2" to="/">首頁</router-link>
+                <router-link class="mx-2" to="/red">紅</router-link>
+                <router-link class="mx-2" to="/orange">橙</router-link>
+                <router-link class="mx-2" to="/yellow">黃</router-link>
+                <router-link class="mx-2" to="/green">綠</router-link>
+                <router-link class="mx-2" to="/blue">藍</router-link>
+                <router-link class="mx-2" to="/indigo">靛</router-link>
+                <router-link class="mx-2" to="/purple">紫</router-link>
                 <router-link class="mx-2" to="/about">關於</router-link>
 
                 <!-- router-view：渲染 Vue route -->
