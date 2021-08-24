@@ -34,7 +34,7 @@ if ($stylesheetMap)
         $sassWithFullPath = RESOURCE_DIR . DIRECTORY_SEPARATOR . 'sass' . DIRECTORY_SEPARATOR . preg_replace('/\//', DIRECTORY_SEPARATOR, $sass);
         $cssWithFullPath  = PUBLIC_DIR   . DIRECTORY_SEPARATOR . 'css'  . DIRECTORY_SEPARATOR . preg_replace('/\//', DIRECTORY_SEPARATOR, $css);
 
-        echo "\033[33;1m{$sassWithRelativePath}\033[0m => \033[32;1m{$cssWithRelativePath}\033[0m ...";
+        echo "\033[33;1m{$sassWithRelativePath}\033[0m => \033[32;1m{$cssWithRelativePath}\033[0m ... ";
 
         $command = "sass --charset --no-source-map \"{$sassWithFullPath}\" \"{$cssWithFullPath}\"";
         $result = system($command, $return_var);

@@ -13,19 +13,21 @@
 </head>
 <body class="demo">
     <main>
-        <div id="vueApp">
+        <div id="vue-app">
             <h1>Vue Router Demo</h1>
 
-            <!-- router-link：渲染後轉為 a，to 屬性指定目標 URL -->
-            <router-link class="mr-1" to="/">首頁</router-link>
-            <router-link class="mx-2" to="/about">關於</router-link>
+            <div id="vue-render-area" v-cloak>
+                <!-- router-link：渲染後轉為 a，to 屬性指定目標 URL -->
+                <router-link class="mr-1" to="/">首頁</router-link>
+                <router-link class="mx-2" to="/about">關於</router-link>
 
-            <!-- router-view：渲染 Vue route -->
-            <router-view v-slot="{ Component }">
-                <transition name="fade" mode="out-in">
-                    <component :is="Component" />
-                </transition>
-            </router-view>
+                <!-- router-view：渲染 Vue route -->
+                <router-view v-slot="{ Component }">
+                    <transition name="fade" mode="out-in">
+                        <component :is="Component" />
+                    </transition>
+                </router-view>
+            </div>
         </div>
     </main>
 

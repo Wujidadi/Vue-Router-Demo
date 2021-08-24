@@ -1,3 +1,7 @@
+[v-cloak] {
+    display: none;
+}
+
 body {
     &.demo {
         font-family: Arial, PMingLiU, 新細明體;
@@ -22,7 +26,7 @@ body {
 
             &-enter-active,
             &-leave-active {
-                transition: opacity 0.25s ease;
+                transition: opacity 0.075s ease;
             }
 
             &-enter-from,
@@ -32,7 +36,28 @@ body {
         }
 
         .vue-demo {
-            
+            /* body padding = 8px * 2, h1 = 40px * 1.2 + 0.5rem, a = 18px, self border = 3px * 2 */
+            height: calc(100vh - 8px * 2 - (40px * 1.2 + 0.5rem) - 18px - 3px * 2);
+            border: {
+                style: solid;
+                color: transparentize(black, 0.6);
+                width: 3px;
+            }
+
+            .vue-demo-content {
+                font-size: 5em;
+                opacity: 0.75;
+            }
+
+            &#vue-demo {
+                &-home {
+                    background-color: antiquewhite;
+                }
+
+                &-about {
+                    background-color: paleturquoise;
+                }
+            }
         }
     }
 }
