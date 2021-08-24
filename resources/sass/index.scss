@@ -51,11 +51,11 @@ body {
 
             &#vue-demo {
                 &-home {
-                    background-color: antiquewhite;
+                    background-image: linear-gradient(250deg, antiquewhite, silver, lightsteelblue);
                 }
 
                 &-about {
-                    background-color: paleturquoise;
+                    background-image: linear-gradient(70deg, rgb(197, 248, 248), turquoise, lightskyblue);
                 }
 
                 &-red {
