@@ -38,6 +38,6 @@
         </div>
     </main>
 
-    <script type="module" src="<?php echo AssetCachebuster('/js/index.js', CachebusterLength); ?>"></script>
+    <script src="<?php echo AssetCachebuster('/js/index.js', CachebusterLength); ?>"></script>
 </body>
 </html>
