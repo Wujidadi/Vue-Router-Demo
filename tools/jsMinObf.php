@@ -44,6 +44,10 @@ if ($jsScriptMap)
         echo "\033[33;1m{$srcWithRelativePath}\033[0m => \033[32;1m{$dstWithRelativePath}\033[0m ... ";
 
         $command = "webpack {$srcWithFullPath} -o {$dstDirectory} --output-filename {$dstFileName}";
+        if (!in_array('--verbose', $argv))
+        {
+            $command .= ' > /dev/null 2>&1';
+        }
         $result = system($command, $return_var);
         if ($return_var == 0)
         {

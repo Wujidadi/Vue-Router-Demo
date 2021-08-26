@@ -6,3 +6,4 @@ $Route->map('GET', '/', function()
 {
     SinglePageController::getInstance()->index();
 });
+ 

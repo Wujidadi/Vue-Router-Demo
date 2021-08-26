@@ -1,4 +1,4 @@
-import vueDemoAboutPage from './about.html';
+import vueDemoAboutPage from './components/about.html';
 
 const vueDemoHomePage = 
     `<div id="vue-demo-home" class="vue-demo d-flex align-items-center justify-content-center">
