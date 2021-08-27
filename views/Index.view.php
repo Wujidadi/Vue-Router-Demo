@@ -5,11 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue Router Demo</title>
-    <link rel="stylesheet" href="/libraries/Bootstrap/bootstrap.min.css">
     <script src="/libraries/Bootstrap/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/libraries/Bootstrap/bootstrap.min.css">
     <script src="/libraries/Vue/vue.global.prod.js"></script>
     <script src="/libraries/Vue/vue-router.global.prod.js"></script>
-    <link rel="stylesheet" href="<?php echo AssetCachebuster('/css/index.css', CachebusterLength); ?>">
+    <script src="/libraries/CCK.js/prototype.js"></script>
+    <script src="/libraries/CCK.js/timeout.js"></script>
+    <script src="/libraries/CCK.js/cck.min.js"></script>
+    <link rel="stylesheet" href="<?php echo AssetCachebuster('/css/index.css', CachebusterLength - 14); ?>">
 </head>
 <body class="demo">
     <main>
@@ -38,6 +41,6 @@
         </div>
     </main>
 
-    <script src="<?php echo AssetCachebuster('/js/index.js', CachebusterLength); ?>"></script>
+    <script src="<?php echo AssetCachebuster('/js/index.js', CachebusterLength - 14); ?>"></script>
 </body>
 </html>

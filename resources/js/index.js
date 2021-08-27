@@ -11,12 +11,19 @@ const vueDemoComponent = {
         template: vueDemoAboutPage,
         data() {
             return {
-                sec: demoVueMount.gvar
+                sec: 0
             };
         },
         mounted() {
+            let timestamp = demoVueMount.initTime,
+                date = dateFormat(timestamp);
+            echo(this.sec, date.split(' ')[1]);
+
             setInterval(() => {
-                demoVueMount.gvar = ++this.sec;
+                timestamp = dateStamp();
+                date = dateFormat(timestamp);
+                this.sec = (timestamp - demoVueMount.initTime) / 1000;
+                echo(this.sec, date.split(' ')[1]);
             }, 1000);
         }
     },
@@ -54,7 +61,7 @@ const demoVueRouter = VueRouter.createRouter({
 const demoVueApp = Vue.createApp({
     data() {
         return {
-            gvar: 0
+            initTime: dateStamp()
         };
     }
 });
