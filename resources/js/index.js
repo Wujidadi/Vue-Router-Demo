@@ -11,20 +11,34 @@ const vueDemoComponent = {
         template: vueDemoAboutPage,
         data() {
             return {
-                sec: 0
+                sec: 0,
+                timestamp: null,
+                date: null,
+                timeCounterInterval: null
             };
         },
+        methods: {
+            setTime() {
+                this.timestamp = dateStamp();
+                this.date = dateFormat(this.timestamp);
+                this.sec = (this.timestamp - demoVueMount.initTime) / 1000;
+            },
+            timeCounter() {
+                this.setTime();
+                echo(this.sec, this.date.split(' ')[1]);
+            }
+        },
         mounted() {
-            let timestamp = demoVueMount.initTime,
-                date = dateFormat(timestamp);
-            echo(this.sec, date.split(' ')[1]);
-
-            setInterval(() => {
-                timestamp = dateStamp();
-                date = dateFormat(timestamp);
-                this.sec = (timestamp - demoVueMount.initTime) / 1000;
-                echo(this.sec, date.split(' ')[1]);
+            this.setTime();
+            this.timeCounterInterval = setInterval(() => {
+                this.timeCounter();
             }, 1000);
+        },
+        watch() {
+            // this.sec = (dateStamp() - demoVueMount.initTime) / 1000;
+        },
+        beforeRouteLeave(to, from) {
+            clearInterval(this.timeCounterInterval);
         }
     },
 

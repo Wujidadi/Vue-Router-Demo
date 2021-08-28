@@ -31,12 +31,14 @@
                 <router-link class="mx-2" to="/purple">紫</router-link>
                 <router-link class="mx-2" to="/about">關於</router-link>
 
-                <!-- router-view：渲染 Vue route -->
-                <router-view v-slot="{ Component }">
-                    <transition name="fade" mode="out-in">
-                        <component :is="Component" />
-                    </transition>
-                </router-view>
+                <keep-alive>
+                    <!-- router-view：渲染 Vue route -->
+                    <router-view v-slot="{ Component }">
+                        <transition name="fade" mode="out-in">
+                            <component :is="Component" />
+                        </transition>
+                    </router-view>
+                </keep-alive>
             </div>
         </div>
     </main>
