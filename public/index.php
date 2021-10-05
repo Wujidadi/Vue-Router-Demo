@@ -10,8 +10,8 @@
 */
 
 # Error displaying and reporting
-// ini_set('display_errors','1');
-// error_reporting(E_ALL);
+ini_set('display_errors','1');
+error_reporting(E_ALL);
 
 # PHP decimal precision
 ini_set('precision', 16);
